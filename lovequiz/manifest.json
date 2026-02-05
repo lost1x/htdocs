@@ -1,0 +1,18 @@
+{
+  "name": "Love Language Quiz",
+  "short_name": "LoveQuiz",
+  "description": "Discover your love language with our comprehensive 15-question quiz",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff6b6b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./generated-icon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["lifestyle", "entertainment", "personalization"]
+}

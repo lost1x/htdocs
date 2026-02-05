@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lovequiz.42web.io/sitemap.xmlUser-agent: *
+Allow: /
+
+Sitemap: https://lovequiz.42web.io/sitemap.xmlUser-agent: *
+Allow: /
+
+Sitemap: https://lovequiz.42web.io/sitemap.xml

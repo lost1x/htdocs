@@ -1,0 +1,275 @@
+body {
+    color: cyan;
+    background: linear-gradient(45deg, black, darkblue, black, darkblue, black);
+    text-align: center;
+    margin: 0;
+    padding: 5px 5px;
+    font-family: noteworthy, serif;
+    display: inline-block;
+    width: 100vw;
+    animation: gradient 10s ease infinite;
+    position: relative;
+    overflow: auto;
+    justify-content: center;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+header {
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff00cc, 0 0 15px #ff00cc;
+    animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc;
+    }
+    100% {
+        text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 20px #ff00cc;
+    }
+}
+
+.video-container {
+    width: 90%;
+    height: 600px;
+    border: none;
+    display: inline-block;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+}
+
+.hr {
+    width: 90%;
+    color: #00bfff;
+    height: 2px;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #facc15;
+    text-align: center;
+    animation: pulseGlow 2s infinite alternate;
+}
+
+button {
+    background: black;
+    border: inset 1px white;
+    animation: pulseGlow 2s infinite alternate;
+    color: red;
+    justify-content: space-around;
+    text-align: center;
+    padding: 1em 1.4em;
+    border-radius: 20px;
+    font-size: 0.6em;
+    cursor: pointer;
+    margin: 2px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00e0ff, 0 0 20px #00ff88;
+}
+
+.seperator {
+    display: none;
+    /* Removed separators for cleaner look */
+}
+
+
+.caption {
+    font-family: noteworthy, fantasy;
+    font-size: 1rem;
+}
+
+.icon-container {
+    display: inline-block;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.icon {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#section02,
+#section03,
+#section04,
+#section05,
+#section06 {
+    display: none;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-family: Courier New, monospace;
+}
+
+.container {
+    background: none;
+    max-width: 100%;
+}
+
+.icon img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-container {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: navy;
+}
+
+.footer-container {
+    min-width: 100%;
+    background-color: black;
+    color: white;
+    padding: 8px;
+}
+
+.spacer {
+    height: 20px;
+    color: red;
+    background-color: transparent;
+    margin-top: 2vw;
+}
+
+.chat-container {
+    display: inline-block;
+    inline-block-direction: column;
+    align-items: center;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    position: fixed;
+    font-family: noteworthy, fantasy;
+    font-size: 1.2rem;
+    color: red;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    animation: pulseGlow 2s infinite alternate;
+    width: 10%;
+    display: inline-block;
+    justify-content: center;
+}
+
+.bot-description {
+    color: white;
+    margin: 10px 0;
+}
+
+.logo-container {
+    width: 100vw;
+    height: 40vw;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+}
+
+.bot-cards-container {
+    display: inline-block;
+    inline-block-wrap: wrap;
+    gap: 10px;
+}
+
+.bot-card {
+    border: 2px inset deepskyblue;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+object-fit: contain;
+}
+
+.bot-thumbnail {
+    width: 100%;
+height: 100%;
+    border-radius: 8px;
+}
+
+.thumbnail {
+    width: 25%;
+}
+
+.bot-info {
+    margin-top: 8px;
+}
+
+.bot-description {
+    font-size: 12px;
+    font-family: cursive;
+}
+
+.bot-gen {
+    display: inline-block;
+    width: 90%;
+    padding: 5px;
+    justify-content: space-around;
+    overflow: hidden;
+    background: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-item {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    position: relative;
+}
+
+
+.grid2-item {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    position: relative;
+}
+
+.page:first-child {
+    display: inline-block;
+}
+
+.legal-spacer {
+    font-size: 4px;
+    animation: pulseGlow 2s infinite alternate;
+    font-family: cursive;
+}
