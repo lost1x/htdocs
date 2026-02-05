@@ -44,10 +44,18 @@ class LoveLanguageQuiz {
     }
     
     showPage(pageId) {
-        document.querySelectorAll('.page').forEach(page => {
+        const pages = document.querySelectorAll('.page');
+        const targetPage = document.getElementById(pageId);
+        
+        if (!targetPage) {
+            console.error('Page not found:', pageId);
+            return;
+        }
+        
+        pages.forEach(page => {
             page.classList.remove('active');
         });
-        document.getElementById(pageId).classList.add('active');
+        targetPage.classList.add('active');
     }
     
     displayQuestion() {
@@ -258,11 +266,6 @@ class LoveLanguageQuiz {
 }
 
 // Utility functions
-function showLoadingOverlay(show) {
-    const overlay = document.getElementById('loading-overlay');
-    overlay.classList.toggle('active', show);
-}
-
 function showResults() {
     quiz.showResults();
 }
@@ -270,12 +273,6 @@ function showResults() {
 // Initialize the quiz
 document.addEventListener('DOMContentLoaded', () => {
     window.quiz = new LoveLanguageQuiz();
-    
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(err => {
-            console.log('Service worker registration failed:', err);
-        });
-    }
 });
 
 document.addEventListener('visibilitychange', () => {

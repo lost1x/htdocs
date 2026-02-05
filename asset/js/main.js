@@ -363,3 +363,83 @@ window.showPrivacy = showPrivacy;
 window.showTerms = showTerms;
 window.showSupport = showSupport;
 window.closeModal = closeModal;
+
+// ===== SUGGESTION SYSTEM =====
+
+class SuggestionSystem {
+    constructor() {
+        this.suggestions = [];
+        this.loadSuggestions();
+        this.updateVoteCount();
+    }
+
+    loadSuggestions() {
+        const stored = localStorage.getItem('toolSuggestions');
+        if (stored) {
+            this.suggestions = JSON.parse(stored);
+        }
+    }
+
+    saveSuggestions() {
+        localStorage.setItem('toolSuggestions', JSON.stringify(this.suggestions));
+    }
+
+    addSuggestion(suggestion) {
+        if (!this.suggestions.includes(suggestion)) {
+            this.suggestions.push(suggestion);
+            this.saveSuggestions();
+            this.updateVoteCount();
+            this.showFeedback('Thank you for your suggestion!', 'success');
+        } else {
+            this.showFeedback('You already suggested this!', 'info');
+        }
+    }
+
+    updateVoteCount() {
+        const count = this.suggestions.length;
+        document.getElementById('vote-count').textContent = count;
+    }
+
+    showFeedback(message, type = 'info') {
+        const feedback = document.createElement('div');
+        feedback.className = `suggestion-feedback ${type}`;
+        feedback.textContent = message;
+        feedback.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${type === 'success' ? 'rgba(34, 197, 94, 0.9)' : 'rgba(59, 130, 246, 0.9)'};
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            z-index: 1001;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        `;
+        
+        document.body.appendChild(feedback);
+        
+        setTimeout(() => {
+            feedback.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => {
+                document.body.removeChild(feedback);
+            }, 300);
+        }, 2000);
+    }
+}
+
+// Initialize suggestion system
+window.suggestionSystem = new SuggestionSystem();
+
+// Global functions for suggestion system
+window.addSuggestion = (suggestion) => window.suggestionSystem.addSuggestion(suggestion);
+window.submitSuggestion = () => {
+    const input = document.getElementById('tool-suggestion');
+    const suggestion = input.value.trim();
+    
+    if (suggestion) {
+        window.suggestionSystem.addSuggestion(suggestion);
+        input.value = '';
+        input.focus();
+    }
+};

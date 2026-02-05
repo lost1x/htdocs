@@ -62,7 +62,8 @@ class HubNavigation {
             'mytarot': 'Tarot Reading',
             'dream-interpreter': 'Dream Interpreter',
             'fortune-teller': 'Fortune Teller',
-            'zodiac-calculator': 'Zodiac Calculator'
+            'zodiac-calculator': 'Zodiac Calculator',
+            'numerology': 'Numerology'
         };
         return titles[this.currentTool] || 'Mystical Tool';
     }
@@ -72,8 +73,9 @@ class HubNavigation {
             { id: 'lovequiz', name: 'Love Quiz', icon: 'fa-heart', color: '#EC4899' },
             { id: 'mytarot', name: 'Tarot Reading', icon: 'fa-moon', color: '#6B46C1' },
             { id: 'dream-interpreter', name: 'Dream Interpreter', icon: 'fa-cloud', color: '#3B82F6' },
-            { id: 'fortune-teller', name: 'Fortune Teller', icon: 'fa-crystal-ball', color: '#F97316' },
-            { id: 'zodiac-calculator', name: 'Zodiac Calculator', icon: 'fa-star', color: '#14B8A6' }
+            { id: 'fortune-teller', name: 'Fortune Teller', icon: 'fa-circle', color: '#F97316' },
+            { id: 'zodiac-calculator', name: 'Zodiac Calculator', icon: 'fa-star', color: '#14B8A6' },
+            { id: 'numerology', name: 'Numerology', icon: 'fa-infinity', color: '#9333EA' }
         ];
 
         return tools

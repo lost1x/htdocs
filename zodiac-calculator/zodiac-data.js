@@ -67,7 +67,7 @@ const zodiacSigns = [
     {
         name: "Cancer",
         symbol: "♋",
-        icon: "fa-water",
+        icon: "fa-droplet",
         dates: "June 21 - July 22",
         element: "Water",
         quality: "Cardinal",
@@ -130,7 +130,7 @@ const zodiacSigns = [
     {
         name: "Libra",
         symbol: "♎",
-        icon: "fa-balance-scale",
+        icon: "fa-scale-balanced",
         dates: "September 23 - October 22",
         element: "Air",
         quality: "Cardinal",
@@ -151,7 +151,7 @@ const zodiacSigns = [
     {
         name: "Scorpio",
         symbol: "♏",
-        icon: "fa-spider",
+        icon: "fa-scorpion",
         dates: "October 23 - November 21",
         element: "Water",
         quality: "Fixed",
@@ -172,7 +172,7 @@ const zodiacSigns = [
     {
         name: "Sagittarius",
         symbol: "♐",
-        icon: "fa-archery",
+        icon: "fa-bow-arrow",
         dates: "November 22 - December 21",
         element: "Fire",
         quality: "Mutable",
