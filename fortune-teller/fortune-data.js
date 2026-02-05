@@ -106,39 +106,63 @@ const fortuneCategories = {
 const fortuneMethods = [
     {
         name: "Crystal Ball Gazing",
-        icon: "fa-crystal-ball",
-        description: "Ancient method of scrying using a crystal ball to reveal hidden truths and future possibilities.",
-        origin: "Dating back to Celtic druidic traditions"
+        icon: "fa-circle-dot",
+        description: "Ancient method of scrying using a crystal ball to reveal hidden truths and future possibilities through mystical visions and spiritual insight.",
+        origin: "Dating back to Celtic druidic traditions over 2,000 years ago",
+        detailedInfo: "Crystal ball gazing, or scrying, involves entering a meditative state while gazing into a crystal sphere. Practitioners believe the crystal acts as a portal to the spiritual realm, where visions and symbols appear in the mind's eye. This practice requires deep concentration and a quiet environment. The crystal ball is often cleansed and charged under moonlight to enhance its mystical properties.",
+        famousPractitioners: "John Dee, Queen Elizabeth I's advisor; Nostradamus; Modern psychics like Sylvia Browne",
+        accuracy: "Considered highly intuitive and personal, readings vary based on the practitioner's connection to spiritual energies",
+        bestFor: "General life guidance, future possibilities, and spiritual insights"
     },
     {
         name: "Tarot Reading",
         icon: "fa-layer-group",
-        description: "Using tarot cards to gain insight into past, present, and future events through symbolic interpretation.",
-        origin: "15th century Europe, evolved from playing cards"
+        description: "Using tarot cards to gain insight into past, present, and future events through symbolic interpretation and archetypal wisdom.",
+        origin: "15th century Europe, evolved from playing cards into a divination system",
+        detailedInfo: "Tarot cards consist of 78 cards divided into Major and Minor Arcana. Each card carries symbolic imagery representing universal archetypes and life experiences. A reading involves shuffling the deck while focusing on a question, then laying out cards in specific patterns called spreads. The position of cards and their combinations create a narrative about the querent's situation and potential future outcomes.",
+        famousPractitioners: "Alistair Crowley, Pamela Colman Smith (Rider-Waite deck), Rachel Pollack, modern readers like Colette Baron-Reid",
+        accuracy: "Highly structured system with consistent symbolism, making it reliable for pattern recognition and psychological insight",
+        bestFor: "Specific questions, decision-making, and understanding psychological patterns"
     },
     {
         name: "Palm Reading",
         icon: "fa-hand-paper",
-        description: "Analyzing the lines, shapes, and mounts of the hand to reveal character traits and predict future events.",
-        origin: "Ancient India, spread through Roma culture"
+        description: "Analyzing the lines, shapes, and mounts of the hand to reveal character traits and predict future events through physical mapping.",
+        origin: "Ancient India, spread through Roma culture across Europe and Asia",
+        detailedInfo: "Palmistry examines both hands - the dominant hand shows potential and future possibilities, while the non-dominant hand reveals inherited traits. Major lines include the heart line (emotions), head line (intellect), life line (vitality), and fate line (destiny). Mounts on the palm correspond to planetary influences, and the shape of fingers and hands provide additional character insights.",
+        famousPractitioners: "Cheiro (William John Warner), Count Louis Hamon, modern practitioners like Johnny Fincham",
+        accuracy: "Based on physical characteristics that can be objectively read, though interpretation requires extensive experience",
+        bestFor: "Personality analysis, health indicators, and life path understanding"
     },
     {
         name: "Astrology",
         icon: "fa-star",
-        description: "Interpreting celestial positions and movements to understand personality and forecast future events.",
-        origin: "Ancient Babylon, over 2,000 years old"
+        description: "Interpreting celestial positions and movements to understand personality and forecast future events through cosmic patterns.",
+        origin: "Ancient Babylon, over 2,000 years old, developed in Greek, Egyptian, and Indian traditions",
+        detailedInfo: "Astrology creates a natal chart based on the exact time, date, and location of birth, showing the positions of planets, sun, and moon in relation to Earth. Each planet represents different aspects of personality and life areas. The angles between planets (aspects) and their positions in zodiac signs and houses create a complex map of potential life patterns and timing for significant events.",
+        famousPractitioners: "Ptolemy, Nostradamus, Johannes Kepler, modern astrologers like Susan Miller and Rick Levine",
+        accuracy: "Mathematically precise with extensive historical data, though interpretation varies among schools of thought",
+        bestFor: "Personality understanding, life timing, and compatibility analysis"
     },
     {
         name: "Numerology",
         icon: "fa-hashtag",
-        description: "Using the mystical significance of numbers to analyze personality and predict future patterns.",
-        origin: "Ancient Greek and Pythagorean traditions"
+        description: "Using the mystical significance of numbers to analyze personality and predict future patterns through vibrational energies.",
+        origin: "Ancient Greek and Pythagorean traditions, developed in Hebrew Kabbalah and Chinese systems",
+        detailedInfo: "Numerology assigns numerical values to letters and dates, reducing them to single digits (1-9) or master numbers (11, 22, 33). Each number carries specific vibrational qualities and meanings. The life path number, derived from birth date, reveals life purpose and challenges. Expression numbers from names show natural talents, while other numbers provide insight into soul urges, destiny, and personal years.",
+        famousPractitioners: "Pythagoras, Cornelius Agrippa, modern numerologists like Dan Millman and Linda Goodman",
+        accuracy: "Based on consistent mathematical principles, making it one of the more systematic divination methods",
+        bestFor: "Life purpose analysis, compatibility, and understanding personal cycles"
     },
     {
         name: "Tea Leaf Reading",
         icon: "fa-mug-hot",
-        description: "Interpreting patterns formed by tea leaves in a cup to gain insight into future events.",
-        origin: "Ancient China, popularized in Europe"
+        description: "Interpreting patterns formed by tea leaves in a cup to gain insight into future events through symbolic imagery.",
+        origin: "Ancient China, popularized in Europe during the 17th century tea trade",
+        detailedInfo: "Tasseography involves drinking loose-leaf tea, leaving a small amount at the bottom of the cup, then swirling the cup three times and turning it upside down. The remaining leaves form patterns that readers interpret as symbols, letters, numbers, or images. Different areas of the cup represent different time frames - near the rim for near future, bottom for distant future. The handle often represents the querent or their home.",
+        famousPractitioners: "Highland Scottish tea readers, Victorian era parlor readers, modern practitioners like Jane Matthews",
+        accuracy: "Highly intuitive and dependent on the reader's symbolic interpretation skills",
+        bestFor: "Immediate future insights, creative problem-solving, and social guidance"
     }
 ];
 

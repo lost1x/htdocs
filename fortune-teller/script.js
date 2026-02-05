@@ -385,12 +385,28 @@ function showMethodDetails(methodName) {
                     <p>${method.description}</p>
                 </div>
                 <div class="method-origin">
-                    <h4>📜 Origin</h4>
+                    <h4>📜 Origin & History</h4>
                     <p>${method.origin}</p>
                 </div>
+                <div class="method-detailed">
+                    <h4>🔮 How It Works</h4>
+                    <p>${method.detailedInfo}</p>
+                </div>
+                <div class="method-practitioners">
+                    <h4>⭐ Famous Practitioners</h4>
+                    <p>${method.famousPractitioners}</p>
+                </div>
+                <div class="method-accuracy">
+                    <h4>🎯 Accuracy & Reliability</h4>
+                    <p>${method.accuracy}</p>
+                </div>
+                <div class="method-best-for">
+                    <h4>💡 Best For</h4>
+                    <p>${method.bestFor}</p>
+                </div>
                 <div class="method-tip">
-                    <h4>💡 Did You Know?</h4>
-                    <p>This ancient method has been used for centuries to gain insight into the future and understand the mysteries of life.</p>
+                    <h4>🌟 Mystical Insight</h4>
+                    <p>This ancient method has been used for centuries to gain insight into the future and understand the mysteries of life. Each practice carries its own unique wisdom and connection to the universal energies that guide our existence.</p>
                 </div>
             </div>
         </div>
@@ -570,6 +586,25 @@ styleSheet.textContent = `
     
     .method-modal .method-tip h4 {
         color: #F97316;
+    }
+    
+    .method-modal .method-detailed,
+    .method-modal .method-practitioners,
+    .method-modal .method-accuracy,
+    .method-modal .method-best-for {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .method-modal .method-detailed h4,
+    .method-modal .method-practitioners h4,
+    .method-modal .method-accuracy h4,
+    .method-modal .method-best-for h4 {
+        color: var(--fortune-primary);
+        margin-bottom: 0.5rem;
     }
 `;
 

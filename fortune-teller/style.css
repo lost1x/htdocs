@@ -32,7 +32,7 @@
     position: relative;
 }
 
-.fortune-title h1 {
+.mystical-title {
     font-family: var(--font-mystical);
     font-size: clamp(2.5rem, 6vw, 4rem);
     margin-bottom: var(--spacing-sm);
@@ -43,7 +43,70 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
+    position: relative;
+}
+
+.title-icon {
+    position: relative;
+    font-size: 0.8em;
+    animation: mysticalFloat 3s ease-in-out infinite;
+}
+
+.title-icon-left {
+    animation-delay: 0s;
+    color: var(--fortune-primary);
+}
+
+.title-icon-right {
+    animation-delay: 1.5s;
+    color: var(--fortune-accent);
+}
+
+.title-text {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes mysticalFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateY(-10px) rotate(5deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-5px) rotate(-3deg);
+        opacity: 0.9;
+    }
+    75% {
+        transform: translateY(-15px) rotate(2deg);
+        opacity: 1;
+    }
+}
+
+.title-subtitle {
+    font-family: var(--font-primary);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: #E0E0E0;
+    margin-top: var(--spacing-md);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fortune-title h1 i {
@@ -200,8 +263,9 @@
 }
 
 .fortune-prompt p {
-    color: var(--text-secondary);
+    color: #D0D0D0;
     font-size: 1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== QUESTION SECTION ===== */
@@ -264,8 +328,9 @@
 
 .form-group label {
     font-weight: 500;
-    color: var(--text-primary);
+    color: #F0F0F0;
     font-size: 1.1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .form-group select,
@@ -295,8 +360,9 @@
 .char-count {
     text-align: right;
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: #C0C0C0;
     margin-top: 0.25rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .fortune-btn {
@@ -384,8 +450,9 @@
 .vision-text {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: var(--text-primary);
+    color: #F5F5F5;
     text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .fortune-message {
@@ -428,9 +495,10 @@
 
 .alignment-info p,
 .guidance-text p {
-    color: var(--text-primary);
+    color: #E8E8E8;
     line-height: 1.6;
     margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .lucky-elements {
@@ -461,8 +529,9 @@
 }
 
 .lucky-item span {
-    color: var(--text-secondary);
+    color: #D8D8D8;
     font-size: 0.9rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .lucky-item strong {
@@ -490,9 +559,10 @@
 }
 
 .premium-content p {
-    color: var(--text-secondary);
+    color: #D0D0D0;
     margin-bottom: var(--spacing-lg);
     font-size: 1.1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .premium-features {
@@ -506,8 +576,9 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
-    color: var(--text-secondary);
+    color: #C8C8C8;
     font-size: 0.95rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .feature-item i {
@@ -546,10 +617,11 @@
     font-family: var(--font-mystical);
     font-size: 2rem;
     margin-bottom: var(--spacing-xl);
-    background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+    background: linear-gradient(135deg, #F0F0F0, #D0D0D0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .methods-grid {
@@ -586,14 +658,16 @@
     font-family: var(--font-mystical);
     font-size: 1.3rem;
     margin: var(--spacing-sm) 0;
-    color: var(--text-primary);
+    color: #F8F8F8;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .method-card p {
-    color: var(--text-secondary);
+    color: #C0C0C0;
     font-size: 0.9rem;
     margin: 0 0 var(--spacing-md) 0;
     line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .method-origin {

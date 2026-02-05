@@ -171,10 +171,12 @@ const navStyles = `
     margin: 0;
     font-family: var(--font-mystical);
     font-size: 1.5rem;
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+    background: linear-gradient(135deg, var(--fortune-primary), var(--fortune-accent), #FFD700);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
 }
 
 .nav-actions {
