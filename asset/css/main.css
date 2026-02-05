@@ -513,10 +513,11 @@ body {
 }
 
 .suggestion-tags {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-sm);
   justify-content: center;
+  margin-top: var(--spacing-md);
 }
 
 .suggestion-tag {
@@ -733,4 +734,40 @@ body {
 
 .suggestion-feedback.info {
   background: rgba(59, 130, 246, 0.9);
+}
+
+/* ===== COSMIC TOKEN ANIMATION ===== */
+
+.cosmic-token {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.cosmic-token::before {
+  content: '✨';
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  animation: cosmicReveal 3s ease-in-out infinite;
+}
+
+.cosmic-token::after {
+  content: '🌟';
+  position: absolute;
+  right: -20px;
+  opacity: 0;
+  animation: cosmicReveal 3s ease-in-out infinite 0.5s;
+}
+
+@keyframes cosmicReveal {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
 }
