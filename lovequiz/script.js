@@ -55,8 +55,23 @@ class LoveLanguageQuiz {
         if (!question) return;
         
         const progress = ((this.currentQuestion + 1) / quizData.questions.length) * 100;
-        document.getElementById('progress-fill').style.width = `${progress}%`;
-        document.getElementById('progress-text').textContent = `Question ${this.currentQuestion + 1} of ${quizData.questions.length}`;
+        const progressFill = document.getElementById('progress-fill');
+        const progressText = document.getElementById('progress-text');
+        
+        if (progressFill) progressFill.style.width = `${progress}%`;
+        if (progressText) progressText.textContent = `Question ${this.currentQuestion + 1} of ${quizData.questions.length}`;
+        
+        const questionCard = document.getElementById('question-card');
+        if (!questionCard) return;
+        
+        questionCard.innerHTML = `
+            <div class="question-text">
+                <h3>${question.text}</h3>
+            </div>
+            <div class="answers-container" id="answers-container">
+                <!-- Answers will be inserted here -->
+            </div>
+        `;
         
         const answersContainer = document.getElementById('answers-container');
         answersContainer.innerHTML = '';
@@ -74,19 +89,25 @@ class LoveLanguageQuiz {
             answersContainer.appendChild(answerElement);
         });
         
-        document.getElementById('prev-btn').disabled = this.currentQuestion === 0;
-        document.getElementById('next-btn').disabled = this.answers[question.id] === undefined;
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        
+        if (prevBtn) prevBtn.disabled = this.currentQuestion === 0;
+        if (nextBtn) nextBtn.disabled = this.answers[question.id] === undefined;
     }
     
     selectAnswer(answerIndex) {
         const question = quizData.questions[this.currentQuestion];
         this.answers[question.id] = answerIndex;
         
-        document.querySelectorAll('.answer-option').forEach((option, index) => {
+        const answerOptions = document.querySelectorAll('.answer-option');
+        answerOptions.forEach((option, index) => {
             option.classList.toggle('selected', index === answerIndex);
         });
         
-        document.getElementById('next-btn').disabled = false;
+        const nextBtn = document.getElementById('next-btn');
+        if (nextBtn) nextBtn.disabled = false;
+        
         this.saveQuizProgress();
     }
     
@@ -152,11 +173,45 @@ class LoveLanguageQuiz {
         
         const loveLanguageData = quizData.loveLanguages[results.primaryLoveLanguage];
         
-        document.getElementById('result-icon').textContent = loveLanguageData.icon;
-        document.getElementById('result-title').textContent = loveLanguageData.title;
-        document.getElementById('result-description').textContent = loveLanguageData.description;
+        // Update language display
+        const languageDisplay = document.getElementById('language-display');
+        if (languageDisplay) {
+            languageDisplay.innerHTML = `
+                <div class="primary-language">
+                    <div class="language-icon">${loveLanguageData.icon}</div>
+                    <div class="language-info">
+                        <h3>${loveLanguageData.title}</h3>
+                        <p>${loveLanguageData.description}</p>
+                    </div>
+                </div>
+            `;
+        }
         
-        await generateCertificate(results.primaryLoveLanguage); // ← If needed, or remove this line
+        // Update score breakdown
+        const scoreBreakdown = document.getElementById('score-breakdown');
+        if (scoreBreakdown) {
+            const sortedScores = Object.entries(results.scores)
+                .sort(([,a], [,b]) => b - a)
+                .map(([language, score]) => {
+                    const langData = quizData.loveLanguages[language];
+                    return { language, score, ...langData };
+                });
+            
+            scoreBreakdown.innerHTML = sortedScores.map(item => `
+                <div class="score-item ${item.language === results.primaryLoveLanguage ? 'primary' : ''}">
+                    <span class="score-icon">${item.icon}</span>
+                    <span class="score-name">${item.title}</span>
+                    <span class="score-value">${item.score}</span>
+                </div>
+            `).join('');
+        }
+        
+        // Generate certificate
+        try {
+            await generateCertificate(results.primaryLoveLanguage);
+        } catch (error) {
+            console.error('Certificate generation failed:', error);
+        }
         
         this.showPage('results-page');
     }
