@@ -10,6 +10,7 @@ class FortuneTeller {
     init() {
         this.setupFormValidation();
         this.populateMethods();
+        this.populateSacredNumbers();
         this.setupAnimations();
         this.setupCrystalBallInteraction();
     }
@@ -60,6 +61,29 @@ class FortuneTeller {
                 <p>${method.description}</p>
                 <div class="method-origin">
                     <span>${method.origin}</span>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    populateSacredNumbers() {
+        const grid = document.getElementById('numbers-grid');
+        if (!grid) return;
+
+        grid.innerHTML = sacredNumbers.map(num => `
+            <div class="number-card">
+                <div class="number-symbol">
+                    <span class="number-value">${num.number}</span>
+                    <div class="number-meaning">${num.meaning}</div>
+                </div>
+                <div class="number-details">
+                    <p class="number-description">${num.description}</p>
+                    <div class="number-energy">
+                        <strong>Energy:</strong> ${num.energy}
+                    </div>
+                    <div class="number-symbolism">
+                        <strong>Symbolism:</strong> ${num.symbolism}
+                    </div>
                 </div>
             </div>
         `).join('');
@@ -560,11 +584,12 @@ styleSheet.textContent = `
     
     .method-modal .modal-header h3 {
         margin: 0;
-        color: var(--text-primary);
+        color: #F8F8F8;
         font-family: var(--font-mystical);
         display: flex;
         align-items: center;
         gap: var(--spacing-sm);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     }
     
     .method-modal .modal-body {
@@ -574,6 +599,13 @@ styleSheet.textContent = `
     .method-modal .modal-body h4 {
         color: var(--fortune-primary);
         margin-bottom: 0.5rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    
+    .method-modal .modal-body p {
+        color: #D8D8D8;
+        line-height: 1.6;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
     
     .method-modal .method-tip {

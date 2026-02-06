@@ -676,6 +676,112 @@
     font-style: italic;
 }
 
+/* ===== SACRED NUMBERS ===== */
+
+.sacred-numbers {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.sacred-numbers h2 {
+    font-family: var(--font-mystical);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xl);
+    background: linear-gradient(135deg, #F0F0F0, #D0D0D0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+}
+
+.number-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.number-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 0 30px rgba(249, 115, 22, 0.3);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.number-symbol {
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.number-value {
+    font-family: var(--font-mystical);
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--fortune-primary), var(--fortune-accent), #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.number-meaning {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #E8E8E8;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.number-details {
+    text-align: left;
+}
+
+.number-description {
+    color: #D0D0D0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.number-energy,
+.number-symbolism {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.85rem;
+}
+
+.number-energy strong,
+.number-symbolism strong {
+    color: var(--fortune-primary);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.number-energy {
+    color: #C8C8C8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.number-symbolism {
+    color: #C0C0C0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 /* ===== PREMIUM MODAL ===== */
 
 .premium-modal {
@@ -723,19 +829,21 @@
 
 .modal-header h3 {
     margin: 0;
-    color: var(--text-primary);
+    color: #F8F8F8;
     font-family: var(--font-mystical);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .close-btn {
     background: none;
     border: none;
-    color: var(--text-secondary);
+    color: #D0D0D0;
     font-size: 1.2rem;
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 50%;
     transition: all var(--transition-fast);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .close-btn:hover {
@@ -748,8 +856,9 @@
 }
 
 .payment-info h4 {
-    color: var(--text-primary);
+    color: #F0F0F0;
     margin-bottom: var(--spacing-md);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .payment-info ul {
@@ -760,10 +869,11 @@
 
 .payment-info li {
     padding: 0.5rem 0;
-    color: var(--text-secondary);
+    color: #D8D8D8;
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .payment-info li::before {
@@ -784,8 +894,9 @@
 }
 
 .price-note {
-    color: var(--text-secondary);
+    color: #C0C0C0;
     font-size: 0.9rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .paypal-btn {
@@ -844,6 +955,15 @@
         gap: var(--spacing-sm);
     }
     
+    .numbers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-md);
+    }
+    
+    .number-value {
+        font-size: 2.5rem;
+    }
+    
     .method-card {
         padding: var(--spacing-md);
     }
@@ -869,5 +989,18 @@
     .modal-content {
         margin: var(--spacing-md);
         width: calc(100% - 2rem);
+    }
+    
+    .numbers-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .number-value {
+        font-size: 2rem;
+    }
+    
+    .number-card {
+        padding: var(--spacing-md);
     }
 }

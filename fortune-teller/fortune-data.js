@@ -187,6 +187,93 @@ const cosmicAlignments = [
     "Planetary alignment supports your highest good"
 ];
 
+const sacredNumbers = [
+    {
+        number: 1,
+        meaning: "New Beginnings",
+        description: "The number of creation, leadership, and independence. Represents fresh starts and pioneering spirit.",
+        energy: "Masculine, assertive, and initiating energy",
+        symbolism: "The sun, new dawn, and the beginning of all journeys"
+    },
+    {
+        number: 2,
+        meaning: "Partnership & Balance",
+        description: "The number of duality, cooperation, and harmony. Represents relationships and balance.",
+        energy: "Feminine, receptive, and diplomatic energy",
+        symbolism: "The moon, partnerships, and the union of opposites"
+    },
+    {
+        number: 3,
+        meaning: "Creativity & Expression",
+        description: "The number of communication, creativity, and self-expression. Represents joy and optimism.",
+        energy: "Creative, social, and expressive energy",
+        symbolism: "The triangle, mind-body-spirit connection, and divine trinity"
+    },
+    {
+        number: 4,
+        meaning: "Stability & Foundation",
+        description: "The number of structure, order, and practicality. Represents building solid foundations.",
+        energy: "Grounded, organized, and reliable energy",
+        symbolism: "The square, four seasons, and earthly stability"
+    },
+    {
+        number: 5,
+        meaning: "Freedom & Change",
+        description: "The number of adventure, freedom, and versatility. Represents transformation and progress.",
+        energy: "Dynamic, curious, and adaptable energy",
+        symbolism: "The pentagon, five senses, and human experience"
+    },
+    {
+        number: 6,
+        meaning: "Harmony & Nurturing",
+        description: "The number of love, family, and responsibility. Represents healing and service.",
+        energy: "Nurturing, compassionate, and protective energy",
+        symbolism: "The hexagon, family bonds, and unconditional love"
+    },
+    {
+        number: 7,
+        meaning: "Wisdom & Spirituality",
+        description: "The number of intuition, analysis, and spiritual awakening. Represents inner knowledge.",
+        energy: "Mystical, analytical, and introspective energy",
+        symbolism: "The seven days of creation, spiritual completion, and divine wisdom"
+    },
+    {
+        number: 8,
+        meaning: "Abundance & Power",
+        description: "The number of material success, achievement, and infinity. Represents abundance cycles.",
+        energy: "Powerful, ambitious, and manifesting energy",
+        symbolism: "The infinity symbol, material abundance, and karmic balance"
+    },
+    {
+        number: 9,
+        meaning: "Completion & Wisdom",
+        description: "The number of humanitarianism, completion, and universal love. Represents endings and new beginnings.",
+        energy: "Wise, compassionate, and universal energy",
+        symbolism: "The completion of cycles, spiritual mastery, and global consciousness"
+    },
+    {
+        number: 11,
+        meaning: "Intuition & Enlightenment",
+        description: "A master number representing spiritual insight, psychic ability, and enlightenment.",
+        energy: "Highly intuitive, visionary, and transformative energy",
+        symbolism: "Spiritual awakening, divine connection, and higher consciousness"
+    },
+    {
+        number: 22,
+        meaning: "Master Builder",
+        description: "The master number of manifestation, practical idealism, and building dreams into reality.",
+        energy: "Masterful, practical, and world-changing energy",
+        symbolism: "Building bridges between spiritual and material realms"
+    },
+    {
+        number: 33,
+        meaning: "Master Teacher",
+        description: "The master number of healing, compassion, and spiritual service to humanity.",
+        energy: "Christ consciousness, healing, and universal love energy",
+        symbolism: "The ultimate spiritual teacher and healer"
+    }
+];
+
 // ===== HELPER FUNCTIONS =====
 
 function getRandomElement(array) {
@@ -265,5 +352,6 @@ window.fortuneCategories = fortuneCategories;
 window.fortuneMethods = fortuneMethods;
 window.luckyElements = luckyElements;
 window.cosmicAlignments = cosmicAlignments;
+window.sacredNumbers = sacredNumbers;
 window.generateFortune = generateFortune;
 window.getPersonalizedMessage = getPersonalizedMessage;
